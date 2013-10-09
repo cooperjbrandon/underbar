@@ -204,13 +204,10 @@ var _ = { };
   // provided, provide a default one
   _.some = function(collection, iterator) {
     iterator = iterator || function (backup) {return backup;};
-    /*return !_.every(collection, function(item){
+    return !_.every(collection, function(item){
       return !iterator(item);
-    });*/
+    });
     // TIP: There's a very clever way to re-use every() here.
-    return !!_.reduce(collection, function(true_or_false, item){
-    return true_or_false ? true : iterator(item);
-    }, false);
   };
 
 
